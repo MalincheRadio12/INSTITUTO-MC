@@ -4,8 +4,7 @@ document.querySelectorAll('.video-container').forEach(video => {
     video.style.backgroundSize = "cover";
 });
 
-// Eliminar WOW.js (no lo usaremos ahora)
-new WOW().init(); // Elimina esta línea ya que no estamos usando WOW.js
+
 
 // Iniciamos Smoothscroll
 new SmoothScroll('a[href*="#"]').init({
