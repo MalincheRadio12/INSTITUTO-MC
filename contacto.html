@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Registro</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" type="images/10.png" href="images/agencia.png">
+    <!--Cargando fuentes
+     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">-->
+
+    <!--Cargando Iconos-->
+    <link rel="stylesheet" href="css/fontawesome-all.css" type="text/css">
+
+    <!--carga de archivos css-->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <link rel="manifest" href="manifest.json">
+
+
+</head>
+
+<body class="paginas-internas">
+    <!--Sección de menú-->
+    <section class="bienvenidos">
+        <header class="encabezado fixed-top" role="banner" id="encabezado">
+            <div class="container">
+                <a href="index.html" class="logo">
+                    <img src="images/logo.png" alt="Nosotros" style="display: block; margin: 0 auto; width:250px; height: auto;">
+                </a>
+                <button type="button" class="boton-buscar" data-toggle="collapse" data-target="#bloque-buscar" aria-expanded="false">
+                   <i class="fas fa-search"></i>
+                </button>
+                <button type="button" class="boton-menu d-md-none" data-toggle="collapse" data-target="#menu-principal" aria-expanded="false">
+                   <i class="fas fa-bars" aria-hidden="true"></i>
+               </button>
+                <form action="#" id="bloque-buscar" class="collapse">
+                    <div class="contenedor-bloque-buscar">
+                        <input type="text" placeholder="Buscar...">
+                        <input type="submit" value="Buscar">
+                    </div>
+                </form>
+                <nav id="menu-principal" class="collapse">
+                    <ul>
+                        <li><a href="./index.html">Inicio</a></li>
+                        <li><a href="./nosotros.html">Nosotros</a></li>
+                        <li><a href="./servicios.html">Servicio</a></li>
+                        <li class="active"><a href="./contacto.html">Registro</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+
+        </header>
+        <!--Encabezado de página-->
+        <div class="texto-encabezado text-center">
+            <div class="container">
+                <h1 class="display-4 wow bounceIn">Registro</h1>
+                <p class="wow bounceIn" data-wow-delay=".3s">Estamos listos para ayudarte</p>
+            </div>
+        </div>
+    </section>
+    <!--Redirección a index-->
+    <section class="ruta py-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-right">
+                    <a href="index.html">Inicio</a> » Registro
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Sección de formulario -->
+<main class="py-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <h2 class="mb-2">Formulario de Registro</h2>
+                <form id="formRegistro" onsubmit="enviarCorreo(event)">
+                    <!-- Campo Nombre -->
+                    <div class="form-group row">
+                        <label for="nombre" class="col-md-4 col-form-label">Nombre</label>
+                        <div class="col-md-8">
+                            <input class="form-control" type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre" required>
+                        </div>
+                    </div>
+                    <!-- Campo Correo -->
+                    <div class="form-group row">
+                        <label for="correo" class="col-md-4 col-form-label">Correo</label>
+                        <div class="col-md-8">
+                            <input class="form-control" type="email" id="correo" name="correo" placeholder="Ingrese su correo" required>
+                        </div>
+                    </div>
+                    <!-- Campo Fecha de nacimiento -->
+                    <div class="form-group row">
+                        <label for="fecha-nacimiento" class="col-md-4 col-form-label">Fecha de nacimiento</label>
+                        <div class="col-md-8">
+                            <input class="form-control" type="date" id="fecha-nacimiento" name="fecha-nacimiento" required>
+                        </div>
+                    </div>
+                    <!-- Campo Dirección -->
+                    <div class="form-group row">
+                        <label for="direccion" class="col-md-4 col-form-label">Dirección</label>
+                        <div class="col-md-8">
+                            <input class="form-control" type="text" id="direccion" name="direccion" placeholder="Ingrese su dirección" required>
+                        </div>
+                    </div>
+                    <!-- Campo Teléfono -->
+                    <div class="form-group row">
+                        <label for="telefono" class="col-md-4 col-form-label">Teléfono</label>
+                        <div class="col-md-8">
+                            <input class="form-control" type="tel" id="telefono" name="telefono" placeholder="Ingrese su teléfono" required>
+                        </div>
+                    </div>
+                    <!-- Campo Escolaridad -->
+                    <div class="form-group row">
+                        <label for="escolaridad" class="col-md-4 col-form-label">Escolaridad</label>
+                        <div class="col-md-8">
+                            <select class="form-control" id="escolaridad" name="escolaridad" required>
+                                <option value="" disabled selected>Seleccione su escolaridad</option>
+                                <option value="primaria">Primaria</option>
+                                <option value="secundaria">Secundaria</option>
+                                <option value="preparatoria">Preparatoria</option>
+                                <option value="universidad">Universidad</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- Campo Horario -->
+                    <div class="form-group row">
+                        <label for="horario" class="col-md-4 col-form-label">Horario</label>
+                        <div class="col-md-8">
+                            <select class="form-control" id="horario" name="horario" required>
+                                <option value="" disabled selected>Seleccione un horario</option>
+                                <option value="lunes-mañana">Lunes a viernes de 9 a 10 am</option>
+                                <option value="lunes-tarde">Lunes a viernes de 6 a 7 pm</option>
+                                <option value="sabado">Sábados de 9 am a 1 pm</option>
+                                <option value="domingo">Domingos de 9 am a 1 pm</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- Campo Fecha de inicio -->
+                    <div class="form-group row">
+                        <label for="fecha-inicio" class="col-md-4 col-form-label">Fecha de inicio</label>
+                        <div class="col-md-8">
+                            <input class="form-control" type="date" id="fecha-inicio" name="fecha-inicio" required>
+                        </div>
+                    </div>
+                    <!-- Campo Padre o tutor -->
+                    <div class="form-group row">
+                        <label for="padre-tutor" class="col-md-4 col-form-label">Padre o tutor</label>
+                        <div class="col-md-8">
+                            <input class="form-control" type="text" id="padre-tutor" name="padre-tutor" placeholder="Nombre del padre o tutor" required>
+                        </div>
+                    </div>
+                    <!-- Campo Nombre del consultor educativo -->
+                    <div class="form-group row">
+                        <label for="consultor" class="col-md-4 col-form-label">Nombre del consultor educativo</label>
+                        <div class="col-md-8">
+                            <input class="form-control" type="text" id="consultor" name="consultor" placeholder="Ingrese el nombre del consultor educativo" required>
+                        </div>
+                    </div>
+                    
+                    <!-- Botones -->
+                    <div class="form-group row">
+                        <div class="col-md-8 offset-md-4">
+                            <button type="submit" class="btn btn-primary">Enviar y Pagar</button>
+                            <button type="reset" class="btn btn-secondary">Limpiar</button>
+                        </div>
+                    </div>
+                </form>
+                </div>
+                <div class="col-md-4">
+                    <h3>BIENVENIDO YA DISTE EL PRIMER PASO.</h3>
+                    <p>AHORA SOLO LLENA EL FORMULARIO ANTES DE IR AL PAGO. AQUÍ PAGAS TU ACCESO AL SISTEMA DE $950 MXN </p>
+                    <p>Proceso de registro:</p>
+                    <p>1.- 1. Llena el formulario.</p>
+                    <p>2.- Da clic en el botón "Enviar y pagar".</p>
+                    <p>3.- Realiza el pago a través de Mercado Pago.</p>
+                    <p>4.- Envía tu registro por WhatsApp para confirmar tu inscripción.</p>
+                    <img src="images/pago.png" alt="Nosotros" style="display: block; margin: 0 auto; width: 300px; height: auto;">
+
+
+                </div>
+
+
+            </div>
+        </div>
+    </main>
+    <!--Footer de página-->
+    <footer class="piedepagina" role="contentinfo">
+        <div class="container">
+            <p>2025 © INSTITUTO MC</p>
+            <ul class="redes-sociales">
+                <li><a href="https://www.facebook.com/institutomcapizaco"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
+                <li><a href="https://api.whatsapp.com/send/?phone=%2B522411621447&text&type=phone_number&app_absent=0"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
+                <li><a href="https://www.youtube.com/@institutomconline3281"><i class="fab fa-youtube" aria-hidden="true"></i></a></li>
+            </ul>
+            <p>® Zorb FM</p>
+        </div>
+    </footer>
+    <!--Botón de ir hacia arriba, se actiba al tope de pagina-->
+    <a class="ir-arriba" data-scroll href="#encabezado"><i class="fas fa-arrow-circle-up" aria-hidden="true"></i></a>
+
+
+    <!--Carga de archivos js-->
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="./enviar.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/smooth-scroll.min.js"></script>
+    <script src="js/sitio.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./service-worker.js')
+                .then(registration => {
+                    console.log('Service Worker registrado con éxito:', registration);
+                })
+                .catch(error => {
+                    console.log('Error al registrar el Service Worker:', error);
+                });
+        }
+    </script>
+
+</body>
+
+</html>
