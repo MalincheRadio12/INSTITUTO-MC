@@ -101,7 +101,7 @@
 
 /* Estilos generales para las imágenes */
 .side-image {
-    max-width: 350px; /* Igual al tamaño del chat */
+    max-width: 270px; /* Igual al tamaño del chat */
     width: 100%; /* Se adapta al contenedor */
     height: auto; /* Mantiene las proporciones */
     border-radius: 20px; /* Aplica un redondeo de 20px a las esquinas */
@@ -109,12 +109,12 @@
 
 /* Imagen izquierda */
 .left-image {
-    margin-right: 20px; /* Espacio entre la imagen izquierda y el chat */
+    margin-right: 30px; /* Espacio entre la imagen izquierda y el chat */
 }
 
 /* Imagen derecha */
 .right-image {
-    margin-left: 20px; /* Espacio entre la imagen derecha y el chat */
+    margin-left: 30px; /* Espacio entre la imagen derecha y el chat */
 }
 
 /* Animación de pulsación suave */
@@ -143,7 +143,7 @@
     }
 
     .side-image {
-        max-width: 350px; /* Asegura que las imágenes tengan el mismo tamaño que el chat */
+        max-width: 270px; /* Asegura que las imágenes tengan el mismo tamaño que el chat */
         width: 100%; /* Se ajustan al tamaño del contenedor */
         height: auto; /* Mantiene las proporciones */
         margin: 10px 0; /* Espacio entre las imágenes y el chat */
