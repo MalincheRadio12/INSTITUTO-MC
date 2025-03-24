@@ -109,12 +109,12 @@
 
 /* Imagen izquierda */
 .left-image {
-    margin-right: 30px; /* Espacio entre la imagen izquierda y el chat */
+    margin-right: 40px; /* Espacio entre la imagen izquierda y el chat */
 }
 
 /* Imagen derecha */
 .right-image {
-    margin-left: 30px; /* Espacio entre la imagen derecha y el chat */
+    margin-left: 40px; /* Espacio entre la imagen derecha y el chat */
 }
 
 /* Animación de pulsación suave */
