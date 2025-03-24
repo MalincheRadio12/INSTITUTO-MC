@@ -146,7 +146,7 @@
         max-width: 270px; /* Asegura que las imágenes tengan el mismo tamaño que el chat */
         width: 100%; /* Se ajustan al tamaño del contenedor */
         height: auto; /* Mantiene las proporciones */
-        margin: 10px 0; /* Espacio entre las imágenes y el chat */
+        margin: 40px 0; /* Espacio entre las imágenes y el chat */
     }
 
     .left-image {
