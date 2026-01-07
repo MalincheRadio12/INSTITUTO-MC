@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INSTITUTO MC</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f2f2f2;
+    }
+
+    /* CONTENEDOR CANVA */
+    .canva-wrapper {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .canva-wrapper iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* BOTÓN DESCARGA */
+    .download-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #0d6efd;
+      color: #fff;
+      padding: 14px 20px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.3);
+      z-index: 9999;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .download-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.35);
+    }
+
+    /* MENSAJE */
+    .notice {
+      position: fixed;
+      top: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0,0,0,0.75);
+      color: #fff;
+      padding: 10px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      z-index: 9999;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- MENSAJE -->
+  <div class="notice" id="notice">
+    Tu descarga comenzó 📥
+  </div>
+
+  <!-- CANVA -->
+  <div class="canva-wrapper">
+    <iframe
+      loading="lazy"
+      src="https://www.canva.com/design/DAG9qiRv8iY/JDdSpQToRlQB0JjIqJ9BAg/view?embed"
+      allowfullscreen
+      allow="fullscreen">
+    </iframe>
+  </div>
+
+  <!-- BOTÓN DESCARGA -->
+  <a href="INSTITUTO MC" download class="download-btn">
+    Descargar PDF
+  </a>
+
+  <!-- SCRIPT DESCARGA AUTOMÁTICA -->
+  <script>
+    window.addEventListener("load", function () {
+      setTimeout(() => {
+        const link = document.createElement("a");
+        link.href = "revista.pdf";
+        link.download = "Revista_Interactiva.pdf";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+
+        const notice = document.getElementById("notice");
+        notice.style.display = "block";
+
+        setTimeout(() => {
+          notice.style.display = "none";
+        }, 4000);
+      }, 1200);
+    });
+  </script>
+
+</body>
+</html>
+
